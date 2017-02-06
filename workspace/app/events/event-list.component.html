@@ -37,7 +37,7 @@
                 <tr *ngFor='#event of events | eventFilter:searchText'>
                     <td><img *ngIf='showImage' [src]='event.imageUrl' [title]='event.name'
                                 [style.width.px]='imageWidht' [style.margin.px]='imageMargin'></td>
-                    <td>{{event.name}}</td>
+                    <td><a [routerLink]="['EventDetail', {id: event.code}]">{{event.name}}</a></td>
                     <td>{{event.code | lowercase}}</td>
                     <td>{{event.date}}</td>
                     <td>{{event.fee | currency : 'USD':true:'1.2-2'}}</td>
